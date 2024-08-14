@@ -135,10 +135,15 @@ def handle_key(event):
         if check_game_over(grid):
             print('Game over!')
 
-grid = initialise_grid()
-window = create_window()
-cells = create_grid(window)
-update_grid_display(cells, grid)
+def main():
+    global grid, cells
+    grid = initialise_grid()
+    window = create_window()
+    cells = create_grid(window)
+    update_grid_display(cells, grid)
 
-window.bind('<Key>', handle_key)
-window.mainloop()
+    window.bind('<Key>', handle_key)
+    window.mainloop()
+
+if __name__ == '__main__':
+    main()
